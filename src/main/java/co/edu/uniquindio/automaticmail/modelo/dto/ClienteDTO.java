@@ -9,11 +9,10 @@ import lombok.Setter;
 @Setter
 public class ClienteDTO {
     private int numDocumento;
-    private String nombre1;
-    private String nombre2;
-    private String apellido1;
-    private String apellido2;
+    private String nombres;
+    private String apellidos;
     private String celular;
+    private String correo;
     private boolean estado;
     private int idUsuario;
 }

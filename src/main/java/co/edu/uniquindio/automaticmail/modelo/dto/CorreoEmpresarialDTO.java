@@ -9,5 +9,5 @@ import lombok.Setter;
 @Setter
 public class CorreoEmpresarialDTO {
     private int id;
-    private String nombre;
+    private String correo;
 }

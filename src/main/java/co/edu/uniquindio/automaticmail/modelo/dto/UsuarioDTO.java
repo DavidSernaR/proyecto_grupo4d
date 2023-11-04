@@ -9,10 +9,8 @@ import lombok.Setter;
 @Setter
 public class UsuarioDTO {
     private int id;
-    private String nombre1;
-    private String nombre2;
-    private String apellido1;
-    private String apellido2;
+    private String nombres;
+    private String apellidos;
     private String clave;
     private String correoPersonal;
     private int idCorreoEmpresarial;

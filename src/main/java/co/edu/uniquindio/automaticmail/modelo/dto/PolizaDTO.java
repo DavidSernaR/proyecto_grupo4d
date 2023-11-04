@@ -10,5 +10,8 @@ import lombok.Setter;
 public class PolizaDTO {
     private int id;
     private String nombre;
+    private String publicId;
+    private String url;
+    private boolean estado;
     private int numDocumentoCliente;
 }

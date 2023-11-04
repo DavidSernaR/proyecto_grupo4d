@@ -9,6 +9,9 @@ import lombok.Setter;
 @Setter
 public class PlantillaDTO {
     private int id;
+    private String asunto;
     private String contenido;
+    private int idUsuario;
+    private int idPoliza;
     private int numDocumentoCliente;
 }

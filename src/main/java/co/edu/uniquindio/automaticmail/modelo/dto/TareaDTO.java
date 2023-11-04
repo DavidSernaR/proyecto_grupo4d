@@ -11,7 +11,9 @@ import java.time.LocalDate;
 @Setter
 public class TareaDTO {
     private int id;
+    private String nombre;
     private String descripcion;
     private LocalDate fecha;
+    private boolean estado;
     private int idUsuario;
 }

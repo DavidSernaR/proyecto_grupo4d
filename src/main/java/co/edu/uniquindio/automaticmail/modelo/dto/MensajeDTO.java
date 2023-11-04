@@ -3,13 +3,17 @@ package co.edu.uniquindio.automaticmail.modelo.dto;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
+import org.springframework.http.HttpStatus;
 
-@AllArgsConstructor
 @Getter
 @Setter
-public class MensajeDTO {
-    private int id;
-    private String asunto;
-    private int idPlantilla;
-    private int idUsuario;
+@AllArgsConstructor
+@ToString
+public class MensajeDTO<T> {
+
+    private HttpStatus estado;
+    private boolean error;
+    private T respuesta;
+
 }
