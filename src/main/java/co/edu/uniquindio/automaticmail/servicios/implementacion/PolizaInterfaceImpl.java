@@ -35,23 +35,25 @@ public class PolizaInterfaceImpl implements PolizaInterface {
     }
 
     @Override
-    public Map subirArchivo(File archivo, String directory, PolizaDTO polizaDTO) throws Exception {
+    public Map subirArchivo(File archivo, String directory) throws Exception {
 
         Map<String, Object> uploadResult = cloudinary.uploader().upload(archivo, ObjectUtils.asMap("folder", directory));
 
-        String publicUrl = (String) uploadResult.get("url");
+        return uploadResult;
+    }
 
-        polizaDTO.setUrl(publicUrl);
-
+    @Override
+    public int crearArchivo(PolizaDTO polizaDTO) throws Exception {
         Poliza poliza = new Poliza();
         poliza.setNombre(polizaDTO.getNombre());
+        poliza.setPublicId(polizaDTO.getPublicId());
         poliza.setUrl(polizaDTO.getUrl());
         poliza.setEstado(true);
         poliza.setCliente(clienteRepo.buscarClientePorNumDocumento(polizaDTO.getNumDocumentoCliente()));
 
         polizaRepo.save(poliza);
 
-        return uploadResult;
+        return poliza.getId();
     }
 
     @Override

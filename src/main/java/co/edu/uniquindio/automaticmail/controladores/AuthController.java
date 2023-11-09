@@ -26,7 +26,7 @@ public class AuthController {
     public ResponseEntity<MensajeDTO> login(@Valid @RequestBody SesionDTO loginPerson) {
         return ResponseEntity.status(HttpStatus.OK).body( new MensajeDTO(HttpStatus.OK, false, sesionServicio.login(loginPerson)) );
     }
-    @PostMapping("/registro")
+    @PostMapping("/registrar")
     public ResponseEntity<MensajeDTO> registro(@Valid @RequestBody UsuarioDTO usuarioDTO) throws Exception {
         usuarioInterface.registrarUsuario(usuarioDTO);
         return ResponseEntity.status(HttpStatus.CREATED).body(new MensajeDTO(HttpStatus.CREATED, false, "Usuario registrado correctamente"));

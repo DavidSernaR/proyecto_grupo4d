@@ -28,6 +28,6 @@ public class Plantilla implements Serializable {
     @ManyToOne
     private Poliza poliza;
 
-    @ManyToMany(mappedBy = "plantilla")
+    @ManyToMany(mappedBy = "plantillas")
     private List<Usuario> usuarios;
 }

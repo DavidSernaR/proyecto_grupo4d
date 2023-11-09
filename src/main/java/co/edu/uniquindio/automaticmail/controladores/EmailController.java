@@ -20,8 +20,8 @@ public class EmailController {
     private final EmailInterface emailInterface;
 
     @PostMapping("/enviar")
-    public ResponseEntity<MensajeDTO> enviarCorreo(@RequestBody PlantillaDTO plantillaDTO, @RequestBody PolizaDTO polizaDTO) throws Exception {
-        emailInterface.enviarCorreo(plantillaDTO, polizaDTO);
+    public ResponseEntity<MensajeDTO> enviarCorreo(@RequestBody PlantillaDTO plantillaDTO) throws Exception {
+        emailInterface.enviarCorreo(plantillaDTO);
         return ResponseEntity.status(HttpStatus.CREATED).body( new MensajeDTO(HttpStatus.CREATED, false,"Correo enviado correctamente"));
     }
 

@@ -4,5 +4,5 @@ import co.edu.uniquindio.automaticmail.modelo.dto.PlantillaDTO;
 import co.edu.uniquindio.automaticmail.modelo.dto.PolizaDTO;
 
 public interface EmailInterface {
-    void enviarCorreo(PlantillaDTO plantillaDTO, PolizaDTO polizaDTO) throws Exception;
+    void enviarCorreo(PlantillaDTO plantillaDTO) throws Exception;
 }

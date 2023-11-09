@@ -16,11 +16,6 @@ public class UsuarioController {
 
     private final UsuarioInterface usuarioInterface;
 
-    @PostMapping("/registrar")
-    public ResponseEntity<MensajeDTO> registro(@Valid @RequestBody UsuarioDTO usuarioDTO) throws Exception {
-        usuarioInterface.registrarUsuario(usuarioDTO);
-        return ResponseEntity.status(HttpStatus.CREATED).body(new MensajeDTO(HttpStatus.CREATED, false, "Usuario registrado correctamente"));
-    }
     @GetMapping("/obtener/{idPerson}")
     public ResponseEntity<MensajeDTO> getPersonDTO (@PathVariable int idUsuario) throws Exception{
         return ResponseEntity.status(HttpStatus.OK).body( new MensajeDTO(HttpStatus.OK, false,usuarioInterface.getUsuarioDTO(idUsuario)));

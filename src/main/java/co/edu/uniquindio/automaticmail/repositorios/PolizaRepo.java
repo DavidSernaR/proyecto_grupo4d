@@ -9,6 +9,8 @@ import java.util.List;
 
 @Repository
 public interface PolizaRepo extends JpaRepository<Poliza, Integer> {
+    @Query("select p from Poliza p where p.id = :id")
+    Poliza buscarPolizaPorId(int id);
     @Query("select p from Poliza p join p.cliente c where p.estado = true and c.numDocumento = :numDocumentoCliente")
     List<Poliza> listarPolizasActivasPorNumeroDocumentoCliente(int numDocumentoCliente);
 }

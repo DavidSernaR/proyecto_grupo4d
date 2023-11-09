@@ -1,0 +1,2 @@
+insert into Correo_empresarial (id,correo) values (1,"empresarial@hotmail.com");
+insert into Cliente (num_Documento, apellidos, celular, correo, estado, nombres, usuario_id) values (100200, "Johnson", "3014889671", "david.sernar@uqvirtual.edu.co", true, "Karl", 1);

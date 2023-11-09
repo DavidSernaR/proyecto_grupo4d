@@ -20,10 +20,16 @@ public class PolizaController {
     private final PolizaInterface polizaInterface;
 
     @PostMapping("/subir")
-    public ResponseEntity<MensajeDTO> subirArchivo(@RequestParam("file") MultipartFile file, @RequestBody PolizaDTO polizaDTO) throws Exception {
+    public ResponseEntity<MensajeDTO> subirArchivo(@RequestParam("file") MultipartFile file) throws Exception {
         File archivo = polizaInterface.convert(file);
-        Map response = polizaInterface.subirArchivo(archivo, "automaticmail", polizaDTO);
+        Map response = polizaInterface.subirArchivo(archivo, "automaticmail");
         return ResponseEntity.status(HttpStatus.OK).body( new MensajeDTO(HttpStatus.OK, false, response ) );
+    }
+
+    @PostMapping("/crear")
+    public ResponseEntity<MensajeDTO> crearArchivo(@RequestBody PolizaDTO polizaDTO) throws Exception {
+        polizaInterface.crearArchivo(polizaDTO);
+        return ResponseEntity.status(HttpStatus.CREATED).body( new MensajeDTO(HttpStatus.CREATED, false,"Poliza registrada correctamente"));
     }
 
     @DeleteMapping("/eliminar/{publicId}/{idPoliza}")
